@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
-const accessKeyId = 'AKIAV577MLLQ6QMGTDXV';
-const secretAccessKey = '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';
+const accessKeyId = 'AKIA6MQHCSR6LEKIW5GA';
+const secretAccessKey = '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';
 
 
 // AWS sdk Config 
