@@ -20,20 +20,20 @@ const fileS3 = require("./utils/s3.helper");
 
 //api for user
 
-router.post("/api/addFile", upload("tets-1999").single("file"), (req, res) => {
+router.post("/api/addFile", upload("test-vibration-2").single("file"), (req, res) => {
   console.log(req.file.location);
   res.json({file:req.file.location});
 });
 
 router.get("/api/moveFile", (req, res) => {
-  fileS3.moveFile('accepted-1999','tets-1999/16491020608521648972206700glo.png','zzz.pdf','tets-1999')
+  fileS3.moveFile('accepted-1999','test-vibration-2/16491020608521648972206700glo.png','zzz.pdf','test-vibration-2')
   res.json({});
 });
 
 router.get("/api/showFile", (req, res) => {
   axios
     .get(
-      "https://tets-1999.s3.eu-central-1.amazonaws.com/16491038194971649102172749log.txt"
+      "https://test-vibration-2.s3.eu-central-1.amazonaws.com/16491038194971649102172749log.txt"
     )
     .then((result) => {
       console.log(result.data);
