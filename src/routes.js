@@ -12,6 +12,7 @@ const router = express.Router();
 
 // let S3 = require("./utils/s3.helper");
 // S3 = new EventController("event");
+const Cognito = require("./controllers/cognetoController");
 
 const upload = require("./utils/s3.helper").uploadImg;
 const fileS3 = require("./utils/s3.helper");
@@ -65,4 +66,30 @@ router.get("/api/showFile", (req, res) => {
 //   EventController.create
 // );
 
+// Cognito api
+router.post(
+  "/auth/registerCognito",
+  upload("test/img").single("img"),
+  Cognito.RegisterUser
+);
+
+router.post("/auth/reSendCode", Cognito.reSendCode);
+
+router.post("/auth/registerSubAdminCognito", Cognito.RegisterSubAdmins);
+
+router.post("/auth/loginCognito", Cognito.Login);
+
+router.put("/api/updateCognito", Cognito.update);
+
+router.get("/api/ValidateToken", Cognito.ValidateToken);
+
+router.patch("/api/confirm", Cognito.confirm);
+
+router.delete("/api/deleteUserCognito", Cognito.DeleteUser);
+
+router.get("/api/getAllCognito", Cognito.getAll);
+
+router.post("/api/resetPassword", Cognito.resetPassword);
+
+router.post("/api/confirmPassword", Cognito.confirmPassword);
 module.exports = router;

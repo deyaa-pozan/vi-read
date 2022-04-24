@@ -13,8 +13,8 @@ AWS.config.update({
 
 // PoolData of userpool from aws
 const poolData = {
-    UserPoolId: "eu-central-1_MmfbN9hF6", // Your user pool id here    
-    ClientId: "uqbapga634sbomvl9vpc1jp85", // Your client id here
+    UserPoolId: "us-east-2_ciNfNVHJp", // Your user pool id here    
+    ClientId: "3qb3losi99af0k206vo939giur", // Your client id here
 
 };
 
